@@ -5,9 +5,7 @@
 
         <app-servers></app-servers>
     </div>
-<hr>--
-    <div>
-
+    
     <div class="row">
         <app-user-generator (uCreatd)="addUser($event)">
             <div #pReference> 
@@ -17,11 +15,20 @@
         </app-user-generator>
     </div>
 
-        <div class="row">
-            <!-- <app-custom-property *ngFor="let userElement of users" 
+    <div class="row">
+    <!-- <app-custom-property *ngFor="let userElement of users" 
                                 [user]="userElement"> </app-custom-property> -->
             <app-custom-property *ngFor="let userElement of users" 
                                  [userAlias]="userElement"> </app-custom-property>
-        </div>        
+    </div>        
+    
+    <div class="row">
+        <p *myStructureDirective="4">This is a custom structure directive, I repeat the p tag n times</p>
+    </div>
+
+    <div [ngSwitch]="5">
+        <p *ngSwitchCase="4"> 4 </p>
+        <p *ngSwitchCase="5"> 5 </p>
+        <p *ngSwitchDefault> Default </p>
     </div>
 </div>

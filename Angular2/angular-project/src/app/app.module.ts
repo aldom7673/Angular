@@ -12,6 +12,8 @@ import { UserGeneratorComponent } from './user-generator/user-generator.componen
 
 import { BasicDirective } from './directives/basic.directive';
 import { BetterDirective } from './directives/better.directive';
+import { StructureDirective } from './directives/structure.directive';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -22,7 +24,8 @@ import { BetterDirective } from './directives/better.directive';
     CustomPropertyComponent,
     UserGeneratorComponent,
     BasicDirective,
-    BetterDirective
+    BetterDirective,
+    StructureDirective
   ],
   imports: [
     BrowserModule,
