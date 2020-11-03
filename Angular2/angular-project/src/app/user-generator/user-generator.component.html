@@ -1,0 +1,9 @@
+<label>User name</label>
+<input type="text" class="form-control" #nameReferenes/>
+{{nameReferenes.value}}
+
+<label>User apellido</label>
+<input type="text" class="form-control" [(ngModel)]="user.apellido" />
+
+<button class="btn btn-primary" (click)= "createUser()" >Add a new Server</button>
+<ng-content></ng-content>

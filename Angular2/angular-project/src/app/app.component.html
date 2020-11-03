@@ -1,0 +1,27 @@
+<div class="container">
+    <div class="row">
+        <input type="text" [(ngModel)]="name">
+        <h3>{{ name }}</h3>
+
+        <app-servers></app-servers>
+    </div>
+<hr>--
+    <div>
+
+    <div class="row">
+        <app-user-generator (uCreatd)="addUser($event)">
+            <div #pReference> 
+                <p myDirective >Hi, I'm code from app.component with my basic directive</p> 
+                <p myBetterDirective >Hi, I'm code from app.component with my better directive</p> 
+            </div>
+        </app-user-generator>
+    </div>
+
+        <div class="row">
+            <!-- <app-custom-property *ngFor="let userElement of users" 
+                                [user]="userElement"> </app-custom-property> -->
+            <app-custom-property *ngFor="let userElement of users" 
+                                 [userAlias]="userElement"> </app-custom-property>
+        </div>        
+    </div>
+</div>
