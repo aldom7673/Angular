@@ -8,7 +8,8 @@ import { Component, OnInit, Input } from '@angular/core';
 export class CustomPropertyComponent implements OnInit {
   @Input("userAlias") user : {nombre:string, apellido:string}
   
-  constructor() { }
+  constructor() { 
+  }
 
   ngOnInit(): void {
   }

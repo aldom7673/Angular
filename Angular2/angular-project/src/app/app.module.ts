@@ -13,6 +13,8 @@ import { UserGeneratorComponent } from './user-generator/user-generator.componen
 import { BasicDirective } from './directives/basic.directive';
 import { BetterDirective } from './directives/better.directive';
 import { StructureDirective } from './directives/structure.directive';
+import { UserService } from './services/user.service';
+import { SimpleService } from './services/simple.services';
 
 @NgModule({
   declarations: [
@@ -31,7 +33,7 @@ import { StructureDirective } from './directives/structure.directive';
     BrowserModule,
     FormsModule
   ],
-  providers: [],
+  providers: [UserService,SimpleService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

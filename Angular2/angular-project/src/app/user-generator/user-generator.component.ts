@@ -1,9 +1,11 @@
 import { Component, ElementRef, EventEmitter, OnInit, Output, ViewChild, ContentChild, AfterContentInit } from '@angular/core';
+import { UserService } from '../services/user.service';
 
 @Component({
   selector: 'app-user-generator',
   templateUrl: './user-generator.component.html',
-  styleUrls: ['./user-generator.component.css']
+  styleUrls: ['./user-generator.component.css'],
+  providers:[]
 })
 export class UserGeneratorComponent implements OnInit, AfterContentInit {
   @Output('uCreatd') userCreated = new EventEmitter<{nombre:string, apellido:string}>();
@@ -12,7 +14,7 @@ export class UserGeneratorComponent implements OnInit, AfterContentInit {
 
   user = {nombre:"", apellido:""};
   nombre="";
-  constructor() { }
+  constructor(private userService:UserService) { }
 
   ngOnInit(): void {
     console.log('Text Content of paragraph:' + this.paragraph.nativeElement.textContent);
@@ -23,9 +25,11 @@ export class UserGeneratorComponent implements OnInit, AfterContentInit {
   }
   
   createUser(){
-    this.userCreated.emit({
-      nombre:this.nameContentInput.nativeElement.value,
-      apellido:this.user.apellido
-    });
+    this.userService.addUser({nombre:this.nameContentInput.nativeElement.value, apellido:this.user.apellido})
+    this.userService.triggerAlert.emit("Subscribe text");
+    // this.userCreated.emit({
+    //   nombre:this.nameContentInput.nativeElement.value,
+    //   apellido:this.user.apellido
+    // });
   }
 }
